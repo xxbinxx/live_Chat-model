@@ -1,0 +1,62 @@
+<html>  
+	<head>  
+		<META charset="UTF-8" />
+		
+		<link rel="stylesheet" href="view.css">
+
+		<script src="chat.js"></script>  
+
+	</head>  
+	<body>
+		<section class="module" >  
+		  	<header class="top-bar">
+			    <div class="left">
+			      <span class="icon typicons-message"></span>
+			      <h1 id='greet'>Chats</h1>
+			    </div>
+			    
+			    <div class="right">
+			      <span class="icon typicons-minus" onclick="javascript:toggle_visibility('prompt'); setFocus('username');" id="minimize">-</span>&nbsp;
+			      <span class="icon typicons-times" onclick="javascript:document.getElementById('container').parentNode.remove();" id="close">x</span>
+			    </div>
+		    
+		  	</header>
+		  	<div id="container" style="display:none">
+			  	<section>
+				  <ol class="discussion" id="contents">		    
+				    <li class="self">      
+				      <div class="messages">
+				        <p>Lorem ipsum dolor..</p>
+				        <p>Lorem ipsum dolor sit amet.</p>
+				        <time datetime="T20:14D11'2009">12:46:39 07'2014</time>
+				      </div>
+				    </li>
+
+				    <li class="other">      
+				      <div class="messages">
+				        <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+				        <p>
+				          Lorem ipsum dolor sit amet, consectetur.</p>
+				      </div>
+				    </li>
+				  </ol>
+			  	</section>
+			  	
+			  	<div id="chatArea"> 
+					<input class="text" id='chatLine' type='text' placeholder='Send a message' onfocus="javascript:listenforEnter(this.id, this.value);" > 		
+				</div>
+			</div> 
+			<section class="left" id="prompt" style="display:none">
+				<input class="text" id='username' type='text' placeholder='Enter your name' onfocus="javascript:listenforEnter(this.id, this.value);"> 
+			</section>
+		</section>
+
+
+
+		<div style="width:300px">
+			Test bot <br> <b>(</b> <small> start chat and send messages to chatModel as Bot</small><b>)</b>
+			<input class="text" type='text' id='bot' placeholder='Send a message' autofocus='true' name="bot" >
+			<input type="button" value="submit" onclick="javascript:addChatText('other',htmlSprites(document.getElementById('bot').value));">
+		</div>
+	</body>  
+</html>  
